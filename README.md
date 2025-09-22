@@ -25,10 +25,14 @@ It is designed with **React (frontend)**, **Spring Boot (backend)**, **Kafka (me
 - Axios
 - SockJS + STOMP for WebSocket
 
+---
+
 ### Backend (Spring Boot)
 - Spring Boot (REST + WebSocket + Kafka)
 - Spring Security (JWT Auth)
 - JPA + Hibernate + MySQL
+
+---
 
 ### Infrastructure
 - Apache Kafka + Zookeeper
@@ -107,7 +111,9 @@ CREATE DATABASE fraudguard_db;
 
 ### Auth
 - `POST /auth/v1/auth/signup` → Register user  
-- `POST /auth/v1/auth/login` → Login & get JWT token  
+- `POST /auth/v1/auth/login` → Login & get JWT token
+  
+---
 
 ### Transactions
 - `POST /api/v1/transactions?username={username}&receiverAccount={accountNumber}&amount={amount}` → Create transaction  
@@ -115,26 +121,14 @@ CREATE DATABASE fraudguard_db;
 - `GET /api/v1/transactions/receiver/{accountNumber}` → Get transactions by receiver
 - 'GET /api/v1/alerts/all` → Get transaction alerts only for Admin
 
+---
+
 ### WebSocket
 - Connect: `ws://localhost:8080/ws`  
 - Topic Subscriptions:
 - `/topic/transactions/{username}`
 - `/topic/alerts
 - `/topic/nonfraud
----
-
-## 📸 Demo Screenshots
-
-### 🔑 Login Page
-![Login Screenshot](c:\Users\tusha\Pictures\Screenshots\Screenshot 2025-09-22 175338.png)
-
-
-### 🏠 User Dashboard
-![User Dashboard Screenshot](c:\Users\tusha\Pictures\Screenshots\Screenshot 2025-09-22 183404.png)
-
-### 🛠️ Admin Dashboard
-![Admin Dashboard Screenshot](c:\Users\tusha\Pictures\Screenshots\Screenshot 2025-09-22 175644.png)
-
 ---
 
 ## 🔒 Security
