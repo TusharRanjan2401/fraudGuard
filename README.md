@@ -41,7 +41,7 @@ It is designed with **React (frontend)**, **Spring Boot (backend)**, **Kafka (me
 
 ### 1️⃣ Clone the repo
 ```bash
-git clone <repo-url>
+git clone https://github.com/TusharRanjan2401/fraudGuard
 cd FraudGuard
 ```
 
@@ -49,24 +49,24 @@ cd FraudGuard
 
 ### 2️⃣ Backend Setup (Spring Boot)
 
-1. Go to `fruadguard/`  
+1. Go to `FruadGuard/`  
    ```bash
-   cd fruadguard
+   cd FruadGuard
    ```
 
-2. Configure **application.yml** with your MySQL & Kafka details:
+2. Configure **application.properties** with your MySQL & Kafka details:
    ```yaml
    spring:
      datasource:
-       url: jdbc:mysql://localhost:3306/fraudguard
-       username: root
-       password: password
+       url: jdbc:mysql://localhost:3306/fraudguard_db
+       username: <your-username>
+       password: <your-password>
      jpa:
        hibernate:
          ddl-auto: update
 
    kafka:
-     bootstrap-servers: localhost:9092
+     bootstrap-servers: <server-ip>
    ```
 
 3. Run the backend:
@@ -95,16 +95,6 @@ cd FraudGuard
 
 ---
 
-### 4️⃣ Kafka & Zookeeper Setup (via Docker)
-
-```bash
-docker-compose up -d
-```
-
-This will start **Kafka + Zookeeper**.
-
----
-
 ### 5️⃣ MySQL Setup
 
 ```sql
@@ -116,18 +106,21 @@ CREATE DATABASE fraudguard_db;
 ## 📡 API Endpoints
 
 ### Auth
-- `POST /api/v1/auth/signup` → Register user  
-- `POST /api/v1/auth/login` → Login & get JWT token  
+- `POST /auth/v1/auth/signup` → Register user  
+- `POST /auth/v1/auth/login` → Login & get JWT token  
 
 ### Transactions
-- `POST /api/v1/transactions?username={username}` → Create transaction  
+- `POST /api/v1/transactions?username={username}&receiverAccount={accountNumber}&amount={amount}` → Create transaction  
 - `GET /api/v1/transactions/sender/{accountNumber}` → Get transactions by sender  
-- `GET /api/v1/transactions/receiver/{accountNumber}` → Get transactions by receiver  
+- `GET /api/v1/transactions/receiver/{accountNumber}` → Get transactions by receiver
+- 'GET /api/v1/alerts/all` → Get transaction alerts only for Admin
 
 ### WebSocket
 - Connect: `ws://localhost:8080/ws`  
-- Topic Subscription: `/topic/transactions/{username}`  
-
+- Topic Subscriptions:
+- `/topic/transactions/{username}`
+- `/topic/alerts
+- `/topic/nonfraud
 ---
 
 ## 📸 Demo Screenshots
