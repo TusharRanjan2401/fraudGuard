@@ -17,6 +17,21 @@ It is designed with **React (frontend)**, **Spring Boot (backend)**, **Kafka (me
 
 ---
 
+## 📸 Demo Screenshots
+
+### 🔑 Login Page
+![Login Screenshot](https://ibb.co/whbLhwFb)
+
+
+### 🏠 User Dashboard
+![User Dashboard Screenshot](https://ibb.co/qYRFZR4h)
+
+### 🛠️ Admin Dashboard
+![Admin Dashboard Screenshot](https://ibb.co/fddxJr44)
+
+---
+
+
 ## 🛠️ Tech Stack
 
 ### Frontend (React)
