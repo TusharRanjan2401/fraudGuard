@@ -119,7 +119,7 @@ CREATE DATABASE fraudguard_db;
 - `POST /api/v1/transactions?username={username}&receiverAccount={accountNumber}&amount={amount}` → Create transaction  
 - `GET /api/v1/transactions/sender/{accountNumber}` → Get transactions by sender  
 - `GET /api/v1/transactions/receiver/{accountNumber}` → Get transactions by receiver
-- 'GET /api/v1/alerts/all` → Get transaction alerts only for Admin
+- `GET /api/v1/alerts/all` → Get transaction alerts only for Admin
 
 ---
 
@@ -127,8 +127,8 @@ CREATE DATABASE fraudguard_db;
 - Connect: `ws://localhost:8080/ws`  
 - Topic Subscriptions:
 - `/topic/transactions/{username}`
-- `/topic/alerts
-- `/topic/nonfraud
+- `/topic/alerts`
+- `/topic/nonfraud`
 ---
 
 ## 🔒 Security
